@@ -53,7 +53,7 @@ function funswitch(ke){
   }
 }
 
-document.addEventListener("keydown", function(){
+document.addEventListener("keydown", function(event){
   funswitch(event.key);
   createAnimation(event.key);
   setTimeout(function(){removeAnimation(event.key);}, 150);
