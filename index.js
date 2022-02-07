@@ -3,10 +3,9 @@ for (var i = 0; i < document.querySelectorAll("button").length; i++) {
     var letter = this.innerHTML;
 
     funswitch(letter);
-  
+
     createAnimation(letter);
     setTimeout(function(){removeAnimation(letter);}, 150);
-    
   });
 }
 
@@ -56,8 +55,21 @@ function funswitch(ke){
 document.addEventListener("keydown", function(event){
   funswitch(event.key);
   createAnimation(event.key);
+
   setTimeout(function(){removeAnimation(event.key);}, 150);
+
+
+
 })
+
+
+
+// document.addEventListener("keydown", function(event){
+//   funswitch(event.key);
+//   createAnimation(event.key);
+//   setTimeout(function(){removeAnimation(event.key);}, 150);
+// })
+
 
 
 
@@ -74,6 +86,8 @@ function removeAnimation(key2){
   buttonToAnimate.style.color="#2D4263";
 }
 
-
+// function timefunction(){
+//   setTimeout(function(){removeAnimation(event.key);}, 100);
+// }
 // var sund= new audio("tom-1.mp3");
 //   sund.play;
