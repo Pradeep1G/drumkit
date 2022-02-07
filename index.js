@@ -3,7 +3,10 @@ for (var i = 0; i < document.querySelectorAll("button").length; i++) {
     var letter = this.innerHTML;
 
     funswitch(letter);
-
+  
+    createAnimation(letter);
+    setTimeout(function(){removeAnimation(letter);}, 150);
+    
   });
 }
 
@@ -52,7 +55,24 @@ function funswitch(ke){
 
 document.addEventListener("keydown", function(){
   funswitch(event.key);
+  createAnimation(event.key);
+  setTimeout(function(){removeAnimation(event.key);}, 150);
 })
+
+
+
+function createAnimation(key2){
+  var buttonToAnimate = document.querySelector("."+key2);
+  buttonToAnimate.style.fontSize = "5rem";
+  buttonToAnimate.style.color="pink";
+}
+
+
+function removeAnimation(key2){
+  var buttonToAnimate = document.querySelector("."+key2);
+  buttonToAnimate.style.fontSize = "4rem";
+  buttonToAnimate.style.color="#2D4263";
+}
 
 
 // var sund= new audio("tom-1.mp3");
